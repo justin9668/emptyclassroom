@@ -10,7 +10,7 @@ API_URL = os.getenv('API_URL')
 REDIS_TIMEOUT = 5  # seconds
 CACHE_KEY = 'classrooms:availability'
 CACHE_EXPIRY = 24 * 60 * 60  # 24 hours
-MIN_GAP_MINUTES = 15
+MIN_GAP_MINUTES = 28  # requires 30 minutes actual gap (28 + 2 minute buffer)
 REFRESH_COOLDOWN_MINUTES = 30
 
 BUILDINGS = {
