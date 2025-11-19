@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import json
+import asyncio
 from datetime import datetime, timedelta
 import pytz
 
@@ -38,6 +39,16 @@ def should_refresh_on_wake():
 
 @app.on_event('startup')
 async def startup_event():
+    # Wait for Redis to be ready
+    for i in range(5):
+        try:
+            rd.ping()
+            print('Redis connection established')
+            break
+        except Exception:
+            print(f'Waiting for Redis to be ready... (attempt {i+1}/5)')
+            await asyncio.sleep(1)
+
     try:
         print('App starting up - checking if refresh is needed')
         
