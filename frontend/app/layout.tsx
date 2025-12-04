@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "EmptyClassroom",
-  description: "Find an empty classroom",
+  description: "Find empty classrooms to study in at Boston University",
 };
 
 export default function RootLayout({

@@ -129,9 +129,14 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col">
-      <div className="container mx-auto px-4 flex flex-col flex-1">
+      <div className="container mx-auto px-4 flex flex-col flex-1"> 
         <div className="max-w-[736px] mx-auto w-full flex flex-col flex-1">
-          <h1 className="text-2xl font-semibold text-gray-900 mb-0 text-center pt-12">Find an empty classroom</h1>
+          <div className="text-center pt-12 mb-4">
+            <h1 className="text-2xl font-semibold text-gray-900 mb-1">EmptyClassroom</h1>
+            <p className="text-lg text-gray-600">
+              Find empty classrooms to study in at <span className="md:hidden">BU</span><span className="hidden md:inline">Boston University</span>
+            </p>
+          </div>
           <div className="flex items-center justify-center gap-3 mb-4">
             {!lastUpdated ? (
               <span className="text-sm text-gray-500 animate-pulse">Loading data...</span>
